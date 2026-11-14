@@ -1,0 +1,36 @@
+{
+  "format": "koreanpatch-windows-v2/manifest-v1",
+  "game_id": "funeral-for-the-sun-steam-4088360",
+  "patch_id": "funeral-for-the-sun-ko-steam-26643719",
+  "requirements": [
+    {
+      "path": "funeralforthesun.exe",
+      "sha256": "b493c1d53fb915f7805f360cfe42d1c3126e720dfc234a4b0f2feb99200f9a4b"
+    }
+  ],
+  "operations": [
+    {
+      "kind": "replace",
+      "path": "funeralforthesun.pck",
+      "before_sha256": "e51e65809daadf16ab192df266275a8f22ccaf98a3b4627860b50a080c638ed6",
+      "payload": "payload/0001.bin",
+      "payload_sha256": "cbe7d4bd4c8905b5e9821129a6a36ebcb805f0ce59ce7fe5ce51e4a21cd5ff3a",
+      "after_sha256": "a72010237c41f4a706a807902dbfd49edf740783b0bcba98b5abe621052f087d",
+      "delta_format": "KPDIF001",
+      "result_size": 3428699756
+    }
+  ],
+  "runtime_preconditions": {
+    "os": "Windows 11",
+    "shell": "Windows PowerShell 5.1",
+    "steam_build": "26643719",
+    "status": "Windows 11 / Windows PowerShell 5.1; 최종 ZIP 검증 결과는 해당 GitHub 릴리스 본문 참고"
+  },
+  "verification_scope": {
+    "status": "사용자 완주 테스트를 마친 096 후보 기반 첫 공개; 전체 보호 자동 검증 미완료로 프리릴리스",
+    "full_protection": "incomplete: 기존 미지원 항목 유지; 전체 의미·보호 필드 검증을 통과한 것으로 간주하지 않음",
+    "game_qa": "2026-11-14 사용자 보고: 현재 프로젝트 한글패치로 처음부터 끝까지 테스트 플레이 완료. 제작 측 최신 후보 실게임 재검수는 별도 미실행.",
+    "windows": "이 최종 ZIP의 설치·복구·재설치 검증 결과는 해당 GitHub 릴리스 본문 참고",
+    "data": "내부 이름·아이템 판정과 저장값은 원문 유지 설계. 모든 기존 세이브 호환은 미검증. 도입 진행 중 저장 복원 검은 화면은 원본에서도 관찰됐으며 인과관계 미확정."
+  }
+}

@@ -1,0 +1,44 @@
+--- a/core/io/resource_saver.cpp
++++ b/core/io/resource_saver.cpp
+@@ -285,7 +285,7 @@
+ 	if (save_get_id_for_path) {
+ 		return save_get_id_for_path(p_path, p_generate);
+ 	}
+-	return ResourceUID::INVALID_ID;
++	return ResourceUID::get_singleton()->get_id_for_path(p_path);
+ }
+ 
+ void ResourceSaver::set_get_resource_id_for_path(ResourceSaverGetResourceIDForPath p_callback) {
+--- a/core/io/resource_uid.cpp
++++ b/core/io/resource_uid.cpp
+@@ -172,6 +172,20 @@
+ 	return String::utf8(cs.ptr());
+ }
+ 
++ResourceUID::ID ResourceUID::get_id_for_path(const String &p_path) const {
++	MutexLock l(mutex);
++	ID match = INVALID_ID;
++	for (const KeyValue<ID, Cache> &entry : unique_ids) {
++		if (String::utf8(entry.value.cs.ptr()) == p_path) {
++			if (match != INVALID_ID) {
++				return INVALID_ID;
++			}
++			match = entry.key;
++		}
++	}
++	return match;
++}
++
+ void ResourceUID::remove_id(ID p_id) {
+ 	MutexLock l(mutex);
+ 	ERR_FAIL_COND(!unique_ids.has(p_id));
+--- a/core/io/resource_uid.h
++++ b/core/io/resource_uid.h
+@@ -75,6 +75,7 @@
+ 	void add_id(ID p_id, const String &p_path);
+ 	void set_id(ID p_id, const String &p_path);
+ 	String get_id_path(ID p_id) const;
++	ID get_id_for_path(const String &p_path) const;
+ 	void remove_id(ID p_id);
+ 
+ 	static String uid_to_path(const String &p_uid);
