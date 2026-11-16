@@ -1,7 +1,7 @@
 {
   "format": "koreanpatch-windows-v2/manifest-v1",
   "game_id": "funeral-for-the-sun-steam-4088360",
-  "patch_id": "funeral-for-the-sun-ko-steam-26666647",
+  "patch_id": "funeral-for-the-sun-ko-steam-26666647-rc1",
   "requirements": [
     {
       "path": "funeralforthesun.exe",
@@ -14,10 +14,10 @@
       "path": "funeralforthesun.pck",
       "before_sha256": "2b98df6dc566bd8a8e852978e9e77685ef311c89731496db12eb1e0d04afd11f",
       "payload": "payload/0001.bin",
-      "payload_sha256": "26fd58ae362fd371fd45173f132cc07c3850004c30aae56170bfbf09e28a6c68",
-      "after_sha256": "7f1eb40e5a25eb09a91e0cf0a863ab800d1d8e087c076333a5dfc5ca0df6f1fc",
+      "payload_sha256": "726ef644d9f5cef12820fc4785aa35ce190a6998aa0c74f9ebefd29a38301125",
+      "after_sha256": "ed9fafd917cf814d934d7d4bfb2b70b56cc0ad45da65f092f33e944a3afb141d",
       "delta_format": "KPDIF001",
-      "result_size": 3428694844
+      "result_size": 3428694956
     }
   ],
   "runtime_preconditions": {
@@ -26,13 +26,13 @@
     "steam_build": "26666647"
   },
   "verification_scope": {
-    "status": "incremental update; Windows installer six stages and bounded Vulkan UI verified",
-    "changed_text": "2 added and 2 modified display mappings; all 3123 previous pairs retained",
-    "scene_rebase": "2 existing navigation labels and their font overrides relocated; new original PageData, scene updates and portrait preserved",
-    "script": "pinned GDRE 2.7.4 compilation; previous payload reproduced; all 22327 old tokens preserved with only 24 mapping tokens added; actual display function smoke check passed",
-    "windows": "passed install/install_repeat/restore/restore_repeat/reinstall/final_restore using actual cmd entrypoints and PowerShell5.1 on HJ-PC; six exit codes0; source/result hashes and state/backup checked",
-    "game_qa": "HJ-PC menu, settings, sound and first two dialogue lines displayed in Korean under tested Vulkan options; late updated scenes require progression and were not played",
-    "limitations": "Previous full-protection verification limitations remain. Existing saves retain original text; all-save compatibility and full gameplay unverified.",
-    "rendering": "Default OpenGL and ANGLE showed gray window on HJ-PC. Tested workaround: --rendering-method mobile --rendering-driver vulkan --windowed --resolution 1280x720. Cause and other GPUs unconfirmed."
+    "status": "patch-only revision rc1 of Steam build 26666647; Windows installer six stages and bounded Vulkan UI verified",
+    "changed_text": "24 flashback lines with speaker or speech-level fixes; 1 speaker-specific display override for a shared English line",
+    "script": "flashback_manager and notcutscene compiled with pinned GDRE 2.7.4; base sources reproduce the shipped GDCs byte-for-byte; decompiled diff limited to intended lines",
+    "display_test": "official Godot 4.4.1 headless run of the game autoload on the result PCK: 25/25 target pages rendered as expected, including the portrait-path override and the unchanged shared line",
+    "windows": "passed install/install_repeat/restore/restore_repeat/reinstall/final_restore using actual cmd entrypoints and PowerShell5.1 on HJ-PC; six exit codes0; source/result hashes and state/backup checked; real install hashes unchanged",
+    "limitations": "Previous verification limitations remain. Existing saves retain original text; all-save compatibility and full gameplay unverified.",
+    "rendering": "Default OpenGL and ANGLE showed gray window on HJ-PC. Tested workaround: --rendering-method mobile --rendering-driver vulkan --windowed --resolution 1280x720. Cause and other GPUs unconfirmed.",
+    "game_qa": "HJ-PC menu, settings and first two dialogue lines displayed in Korean under tested Vulkan options; revised late-game lines require progression and were not played"
   }
 }
