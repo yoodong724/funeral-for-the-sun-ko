@@ -8,8 +8,8 @@ from pathlib import Path
 
 from project.adapters.funeral import inspect_pck
 
-SOURCE = '2b98df6dc566bd8a8e852978e9e77685ef311c89731496db12eb1e0d04afd11f'
-RESULT = 'ed9fafd917cf814d934d7d4bfb2b70b56cc0ad45da65f092f33e944a3afb141d'
+SOURCE = '8f297f2a63c7fcc13c5a3b0de4326ef6034ff143e6c5b8f46941d2f1b99b2b01'
+RESULT = '614447bfe7cc769435f1f1a75d4608ba5585d750cdbcfcce96ae0811c0a174b5'
 
 
 def sha(path):
