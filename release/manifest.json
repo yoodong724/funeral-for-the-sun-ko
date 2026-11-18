@@ -1,7 +1,7 @@
 {
   "format": "koreanpatch-windows-v2/manifest-v1",
   "game_id": "funeral-for-the-sun-steam-4088360",
-  "patch_id": "funeral-for-the-sun-ko-steam-26732459",
+  "patch_id": "funeral-for-the-sun-ko-steam-26758003",
   "requirements": [
     {
       "path": "funeralforthesun.exe",
@@ -12,26 +12,26 @@
     {
       "kind": "replace",
       "path": "funeralforthesun.pck",
-      "before_sha256": "8f297f2a63c7fcc13c5a3b0de4326ef6034ff143e6c5b8f46941d2f1b99b2b01",
+      "before_sha256": "1f6c5b283eb08f3cbc2970c614e1a46323c7b9b2251f30220c83e54681eb6d16",
       "payload": "payload/0001.bin",
-      "payload_sha256": "2692c90fd2a6f3221f2a7132298ff5b8551c749858f25ba92ca592b876a75401",
-      "after_sha256": "614447bfe7cc769435f1f1a75d4608ba5585d750cdbcfcce96ae0811c0a174b5",
+      "payload_sha256": "5c3a5e82e6fb2cdc6003f394480530bc1845ab000676a4765e0ea88dd55ec8ef",
+      "after_sha256": "7dfa75f565eea6f4dca6a72e499f778c394fd2580b76bc8bfbe17159f14e3fb1",
       "delta_format": "KPDIF001",
-      "result_size": 3428725164
+      "result_size": 3428726988
     }
   ],
   "runtime_preconditions": {
     "os": "Windows 11",
     "shell": "Windows PowerShell 5.1",
-    "steam_build": "26732459"
+    "steam_build": "26758003"
   },
   "verification_scope": {
-    "status": "first package for Steam build 26732459, built from the 26666647-rc1 patch; installer runtime unchanged; Windows not re-run for this build (user requested minimal verification)",
-    "changed_text": "7 edited page lines mapped, 4 navigation/tutorial/notification labels rebased (2 retranslated), new Previous Conversations panel (8 labels) localized, 1 tree-room tutorial line re-applied to the updated script; relocated Cedro dialogue resources covered by existing mappings",
-    "script": "flashback_manager and tree_room_1 compiled with pinned GDRE 2.7.4; base sources reproduce the shipped GDCs byte-for-byte",
-    "display_test": "official Godot 4.4.1 headless on the result PCK: 11 page renders and 13 scene label/font checks passed (24/24)",
+    "status": "package for Steam build 26758003, built from the 26732459 patch; installer runtime unchanged; Windows not re-run for this build (user requested minimal verification)",
+    "changed_text": "no new or edited display text in this game update; 3 localized scripts (family_tree, main_menu, portrait_draggable_ui) changed by the game for logic only and were rebased with the existing Korean edits",
+    "script": "family_tree, main_menu and portrait_draggable_ui compiled with pinned GDRE 2.7.4; base sources reproduce the shipped GDCs byte-for-byte; candidate diffs equal the previous Korean diffs line for line",
+    "display_test": "not run for this build",
     "windows": "not run for this build; installer runtime identical to the previously verified release",
-    "limitations": "Previous verification limitations remain. Full gameplay, the in-game Previous Conversations panel layout and all-save compatibility unverified.",
+    "limitations": "Previous verification limitations remain. Full gameplay and all-save compatibility unverified.",
     "rendering": "Default OpenGL and ANGLE showed gray window on HJ-PC. Tested workaround: --rendering-method mobile --rendering-driver vulkan --windowed --resolution 1280x720. Cause and other GPUs unconfirmed.",
     "game_qa": "not run for this build"
   }
